@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import lemon from "../../assets/lemon.svg";
 import cart from "../../assets/bag.svg";
 import { Link } from "react-router-dom";
+import ListItems from "../ListItems/ListItems";
 
-const nav = ["Main", "Popular", "Fashion", "Settings"];
+const nav = ["Home", "Popular", "Fashion", "Settings"];
 
 const Home = () => {
   return (
-    <div className="bg-orange-800/50 px-6 py-6">
-      <header className=" flex items-center justify-between">
+    <div>
+      <header className=" flex items-center justify-between bg-gray-800/30 px-6 py-6">
         <div>
           <Link to={"/"}>
             <img
@@ -28,7 +29,7 @@ const Home = () => {
             return (
               <li
                 key={item}
-                className="cursor-pointer text-lg rounded-lg hover:bg-orange-500/80 py-1 px-1 border-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500/80 transition ease-in-out delay-50 text-white"
+                className="cursor-pointer text-lg rounded-lg hover:bg-gray-300/40 py-1 px-1 border-solid focus-visible:outline-2 focus-visible:outline-offset-2  transition ease-in-out delay-50 text-white"
               >
                 {item}
               </li>
@@ -50,6 +51,7 @@ const Home = () => {
           </Link>
         </div>
       </header>
+      <ListItems />
     </div>
   );
 };
